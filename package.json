@@ -1,0 +1,27 @@
+{
+  "name": "nosql-social-network-api",
+  "version": "1.0.0",
+  "description": "MongoDB is popular for its speed with large amounts of data and flexibility with unstructured data. Fullstack application API for a social network web app where users can share thoughts, react to friend's thoughts and create a friend list.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node utils/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliverLo78/nosql-social-network-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oliverLo78/nosql-social-network-api/issues"
+  },
+  "homepage": "https://github.com/oliverLo78/nosql-social-network-api#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^4.12.1",
+    "mongoose": "^6.7.3"
+  }
+}
