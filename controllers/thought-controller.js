@@ -11,7 +11,7 @@ const thoughtController = {
   // get single thought by id
   getSingleThought(req, res) {
     // findOne() on thought model
-    User.findOne({ _id: req.params.userId })
+    Thought.findOne({ _id: req.params.thoughtId })
       .select('-__v')
       // use .populate to populate thoughts and reactions for that User
       // ex: .populate('friends')
