@@ -88,7 +88,8 @@ If you have a suggestion that would make this better, please fork the repo and c
 ### Insomnia to test routes
 Test Description
 
-The following animation shows GET routes to return all users and all thoughts being tested in Insomnia:
+[NoSQL Oliver Lopez video Nov 29, 2022 5_34 PM.webm](https://user-images.githubusercontent.com/109435666/204668754-8efe3d58-752b-4b3d-8baf-f20145c96564.webm)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
