@@ -1,4 +1,4 @@
-const { User, Thought } = require("../models/");
+const { User, Thought, Reaction } = require("../models/");
 
 const thoughtController = {
   // Get all thoughts
@@ -11,15 +11,16 @@ const thoughtController = {
   // get single thought by id
   getSingleThought(req, res) {
     // findOne() on thought model
+    console.log(req.params.thoughtId);
     Thought.findOne({ _id: req.params.thoughtId })
-      .select("-__v")
+       .select("-__v")
       // use .populate to populate thoughts and reactions for that User
       // ex: .populate('friends')
-      .populate("thoughts")
+      // .populate("thoughts")
       .then((thought) =>
-        !thought
-          ? res.status(404).json({ message: "No thought with that ID" })
-          : res.json(thought)
+         !thought
+           ? res.status(404).json({ message: "No thought with that ID" })
+           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
   },
@@ -59,8 +60,8 @@ const thoughtController = {
   // add friend to friend list
   addReaction(req, res) {
     // findOneAndUpdate use $addToSet
-    Reaction.findOneAndUpdate(
-      { _id: req.params.userId },
+    Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId },
       { $addToSet: { reactions: req.params.reactionId } },
       { new: true }
     )
@@ -78,8 +79,8 @@ const thoughtController = {
   // remove reaction from reaction list
   removeReaction(req, res) {
     // findOneAndUpdate
-    User.findOneAndUpdate(
-      { _id: req.params.userId },
+    Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId },
       { $pull: { reactions: req.params.reactionId } },
       { new: true }
     )
